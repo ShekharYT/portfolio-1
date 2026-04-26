@@ -1,18 +1,49 @@
 ---
 const testimonials = [
   {
-    quote: "Turnaround was fast and the first hook immediately improved retention.",
-    byline: "@creatorname · Content Creator",
+    quote: "Abhishek completely transformed our YouTube channel. The editing style he brought was cinematic yet punchy — our average view duration jumped from 38% to 61% within the first month. Honestly one of the best investments we've made.",
+    name: "Rohan Mehta",
+    handle: "@RohanCreates",
+    role: "YouTuber · 280K Subscribers",
+    stars: 5,
   },
   {
-    quote: "Our reels finally feel premium and on-brand while still converting.",
-    byline: "@brandhandle · DTC Founder",
+    quote: "We needed someone who understood both aesthetics and performance. Abhishek delivered reels that felt premium and still drove sales. Our Instagram reach doubled in 6 weeks. Super professional, fast turnaround, zero drama.",
+    name: "Priya Nair",
+    handle: "@PriyaNairOfficial",
+    role: "DTC Brand Founder · Skincare",
+    stars: 5,
   },
   {
-    quote: "Reliable communication, clean revisions, and agency-level consistency.",
-    byline: "@agencylead · Creative Agency",
+    quote: "I was skeptical at first, but after seeing the first edit I was sold. He nailed our brand tone without any briefing back and forth. Clean cuts, great music selection, and he's responsive AF. Will 100% keep working with him.",
+    name: "Arjun Sharma",
+    handle: "@TheArjunSharma",
+    role: "Lifestyle Creator · 120K Followers",
+    stars: 5,
+  },
+  {
+    quote: "Our agency handles 15+ brands and we brought Abhishek on as a dedicated video editor. He matches the brief every time, handles revisions gracefully, and never misses a deadline. Feels like having an in-house editor.",
+    name: "Sneha Kapoor",
+    handle: "@SnehaKapoorMedia",
+    role: "Creative Director · Digital Agency",
+    stars: 5,
+  },
+  {
+    quote: "My podcast clips were going completely unnoticed. Abhishek re-edited them with captions, dynamic pacing, and better hooks — one of them hit 200K views on Instagram. He genuinely understands what makes short-form content pop.",
+    name: "Vikram Bose",
+    handle: "@VikramBosePodcast",
+    role: "Podcaster & Business Coach",
+    stars: 5,
+  },
+  {
+    quote: "The attention to detail is insane. He picked up on subtle brand colors, font styles, and music mood from just our reference folder. The final videos look like they came out of a professional studio. Highly recommended.",
+    name: "Aisha Qureshi",
+    handle: "@AishaQFitness",
+    role: "Fitness Creator · 95K Followers",
+    stars: 5,
   },
 ];
+
 ---
 
 <section id="testimonials" class="section">
@@ -25,8 +56,12 @@ const testimonials = [
       {
         testimonials.map((item) => (
           <figure class="card quote-card reveal">
-            <blockquote>{item.quote}</blockquote>
-            <figcaption>{item.byline}</figcaption>
+            <div class="stars">{"★".repeat(item.stars)}</div>
+            <blockquote>"{item.quote}"</blockquote>
+            <figcaption>
+              <span class="name">{item.name}</span>
+              <span class="meta">{item.handle} · {item.role}</span>
+            </figcaption>
           </figure>
         ))
       }
@@ -45,16 +80,41 @@ const testimonials = [
   .quote-card {
     margin: 0;
     padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .stars {
+    color: #f5a623;
+    font-size: 1rem;
+    letter-spacing: 2px;
   }
 
   blockquote {
-    margin: 0 0 var(--space-4);
-    font-size: 1.04rem;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-style: italic;
+    flex: 1;
   }
 
   figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: var(--space-3);
+  }
+
+  .name {
+    font-size: 0.97rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .meta {
     color: var(--color-muted);
-    font-size: 0.92rem;
+    font-size: 0.85rem;
     font-weight: 500;
   }
 
