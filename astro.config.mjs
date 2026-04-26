@@ -5,5 +5,5 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   output: 'static',
   site: 'https://ShekharYT.github.io',
-  base: '/Portfolio', // Assumes your repository will be named "Portfolio"
+  base: '/portfolio-1', // Assumes your repository will be named "portfolio-1"
 });
