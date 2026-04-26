@@ -1,0 +1,66 @@
+---
+const testimonials = [
+  {
+    quote: "Turnaround was fast and the first hook immediately improved retention.",
+    byline: "@creatorname · Content Creator",
+  },
+  {
+    quote: "Our reels finally feel premium and on-brand while still converting.",
+    byline: "@brandhandle · DTC Founder",
+  },
+  {
+    quote: "Reliable communication, clean revisions, and agency-level consistency.",
+    byline: "@agencylead · Creative Agency",
+  },
+];
+---
+
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title">Testimonials</h2>
+      <p class="section-lead">Creators and teams trust me with recurring content pipelines.</p>
+    </div>
+    <div class="quotes-grid">
+      {
+        testimonials.map((item) => (
+          <figure class="card quote-card reveal">
+            <blockquote>{item.quote}</blockquote>
+            <figcaption>{item.byline}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .quotes-grid {
+    margin-top: var(--space-6);
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .quote-card {
+    margin: 0;
+    padding: var(--space-5);
+  }
+
+  blockquote {
+    margin: 0 0 var(--space-4);
+    font-size: 1.04rem;
+  }
+
+  figcaption {
+    color: var(--color-muted);
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 900px) {
+    .quotes-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

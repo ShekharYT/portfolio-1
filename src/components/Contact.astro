@@ -1,0 +1,53 @@
+<section id="contact" class="section contact-section">
+  <div class="container contact-inner reveal">
+    <h2 class="section-title">Ready to level up your content?</h2>
+    <p class="section-lead">Let's talk about your next project.</p>
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="https://calendly.com" target="_blank" rel="noreferrer">Book a Call</a>
+      <a class="btn btn-secondary" href="https://wa.me/919219282149" target="_blank" rel="noreferrer">Message on WhatsApp</a>
+    </div>
+    <p class="email"><a href="mailto:AbhishekPrakash0000@gmail.com">AbhishekPrakash0000@gmail.com</a></p>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    padding-top: var(--space-8);
+  }
+
+  .contact-inner {
+    border: 1px solid color-mix(in srgb, var(--color-accent) 22%, var(--color-border));
+    border-radius: var(--radius-lg);
+    background:
+      linear-gradient(to bottom right, rgba(255, 77, 0, 0.04), rgba(255, 77, 0, 0)),
+      var(--color-surface);
+    padding: clamp(1.5rem, 4vw, 3rem);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .contact-actions {
+    margin-top: var(--space-5);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .email {
+    margin-top: var(--space-5);
+    color: var(--color-muted);
+  }
+
+  .email a {
+    color: var(--color-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .email a:hover {
+    color: var(--color-text);
+  }
+
+  .contact-actions .btn-primary {
+    min-width: 168px;
+  }
+</style>

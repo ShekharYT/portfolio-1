@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Services from "../components/Services.astro";
+import Work from "../components/Work.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Abhishek | Freelance Video Editor"
+  description="Freelance video editor specializing in Reels, short-form and YouTube edits."
+>
+  <Nav />
+  <main>
+    <Hero />
+    <About />
+    <Services />
+    <Work />
+    <Testimonials />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

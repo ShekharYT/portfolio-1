@@ -1,0 +1,116 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  description: string;
+  href: string;
+  thumbnail?: string;
+}
+
+const { title, category, description, href, thumbnail } = Astro.props;
+---
+
+<a class="card project-card reveal" href={href} target="_blank" rel="noreferrer">
+  <div class="thumb">
+    {
+      thumbnail ? (
+        <img src={thumbnail} alt={`${title} thumbnail`} loading="lazy" />
+      ) : null
+    }
+    <span class="play">▶</span>
+  </div>
+  <div class="content">
+    <p class="tag">{category}</p>
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+</a>
+
+<style>
+  .project-card {
+    display: block;
+    overflow: hidden;
+    transition: transform 240ms ease, box-shadow 240ms ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-strong);
+  }
+
+  .project-card:hover .thumb img {
+    transform: scale(1.04);
+  }
+
+  .project-card:hover .play {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .thumb {
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(135deg, #222, #565656);
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    transition: transform 320ms ease;
+  }
+
+  .thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.04));
+  }
+
+  .play {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: color-mix(in srgb, var(--color-accent) 75%, #fff);
+    color: #fff;
+    z-index: 1;
+    opacity: 0.92;
+    transform: scale(0.92);
+    transition: opacity 220ms ease, transform 220ms ease;
+  }
+
+  .content {
+    padding: var(--space-4);
+  }
+
+  .tag {
+    margin: 0 0 var(--space-2);
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.74rem;
+    font-weight: 600;
+    display: inline-flex;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.16rem 0.55rem;
+    background: #fafaf7;
+  }
+
+  h3 {
+    margin: 0 0 var(--space-2);
+    font-size: 1.1rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-muted);
+  }
+</style>

@@ -1,0 +1,58 @@
+---
+const links = [
+  { href: "#work", label: "Work" },
+  { href: "#services", label: "Services" },
+  { href: "#testimonials", label: "Testimonials" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="brand">Abhishek</p>
+    <nav aria-label="Footer links">
+      {
+        links.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))
+      }
+    </nav>
+    <div class="socials" aria-label="Social links">
+      <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+      <a href="https://tiktok.com" target="_blank" rel="noreferrer">TikTok</a>
+      <a href="https://youtube.com" target="_blank" rel="noreferrer">YouTube</a>
+    </div>
+    <p class="copyright">© 2026 Abhishek. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-8);
+    padding: var(--space-7) 0;
+  }
+
+  .footer-inner {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  nav,
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .brand {
+    margin: 0;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 1.2rem;
+  }
+
+  .copyright {
+    margin: 0;
+    color: var(--color-muted);
+  }
+</style>

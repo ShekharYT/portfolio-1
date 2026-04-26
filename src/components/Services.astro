@@ -1,0 +1,78 @@
+---
+const services = [
+  {
+    icon: "SF",
+    title: "Short-form & Reels",
+    detail: "Instagram, TikTok, and Shorts edits with hook-first pacing for higher retention.",
+  },
+  {
+    icon: "YT",
+    title: "YouTube Long-form",
+    detail: "Structured storytelling with strong pacing, graphics, and purposeful B-roll.",
+  },
+  {
+    icon: "FX",
+    title: "Motion & Effects",
+    detail: "After Effects animations, transitions, text overlays, and branded intros.",
+  },
+];
+---
+
+<section id="services" class="section">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title">Services</h2>
+      <p class="section-lead">Flexible collaboration for creators, businesses, and agencies.</p>
+    </div>
+    <div class="services-grid">
+      {
+        services.map((service) => (
+          <article class="card service-card reveal">
+            <span class="icon" aria-hidden="true">{service.icon}</span>
+            <h3>{service.title}</h3>
+            <p>{service.detail}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-grid {
+    margin-top: var(--space-6);
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .service-card {
+    padding: var(--space-5);
+  }
+
+  .icon {
+    display: inline-grid;
+    place-items: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 999px;
+    background: #f2f2ee;
+    margin-bottom: var(--space-3);
+  }
+
+  h3 {
+    margin: 0 0 var(--space-2);
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 900px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
