@@ -83,6 +83,11 @@ const projects = [
     min-width: 0;
   }
 
+  /* Make the last odd project card span both columns for a balanced look */
+  .featured-work :global(.project-card:last-child:nth-child(odd)) {
+    grid-column: 1 / -1;
+  }
+
   .work-grid {
     margin-top: var(--space-4);
     display: grid;
@@ -94,6 +99,11 @@ const projects = [
   .work-grid :global(.project-card) {
     width: 100%;
     min-width: 0;
+  }
+
+  /* Make the last odd project card span both columns for a balanced look */
+  .work-grid :global(.project-card:last-child:nth-child(odd)) {
+    grid-column: 1 / -1;
   }
 
   @media (max-width: 700px) {
